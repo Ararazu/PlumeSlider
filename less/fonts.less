@@ -1,0 +1,37 @@
+/* Fonts | Plume Slider */
+
+@font-face { font-family: 'Open Sans'; font-style: normal;	font-weight: 400; src: local('Open Sans'), local('OpenSans'), url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff'); }
+@fontBase1:	'Open Sans', 'sans-serif';
+.fontBase1	{ font-family: @fontBase1; }
+
+html, body { .space(0, 0, 0); .fs(18px); }
+*, html, body, div, p, a, input, select, textarea, label, ul, li, ol, span, table, th, tr, td,
+h1, h2, h3, h4, h5, h6, h1 span, h2 span, h3 span, h4 span, h5 span, h6 span { .noAppearance; .fontBase1; }
+p, ul li, ol li, a, table, tr, td, i { .fs(18px); .lineH(21px); .c(@white); }
+
+blockquote {
+	.space(20px 0, 15px 10px 5px 15px, 0);
+	.bl(1px solid @brand-3);
+	p {
+		.space(0 0 10px 0, 0, 0);
+		.c(@brand-3);
+		span.autor {
+			.space(0 0 0 10px, 20px 0 0 0, 0);
+			.c(@brand-3);
+			.fs(0.8em);
+			&:before {
+				content: "\2014 \0020";
+			}
+		}
+	}
+	cite {
+		.space(0, 0, 0);
+		.c(@brand-3);
+		.m(30px 0 0 0);
+		p {
+			.space(0, 0, 0);
+			.fst(normal);
+			.fw(normal);
+		}
+	}
+}

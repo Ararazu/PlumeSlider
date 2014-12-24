@@ -1,0 +1,342 @@
+/* Shortcuts | Plume Slider */
+
+// Variables
+// -------------------------------------------
+
+// Default Colors
+@white:			#FFFFFF;
+@black:			#000000;
+@gray-1:		#444444;
+@gray-2:		#777777;
+@gray-3:		#CCCCCC;
+
+// Brand Colors
+@brand-1:		#887766;
+@brand-2:		#33BBAA;
+@brand-3:		#EEAA00;
+@brand-4:		#DD4455;
+
+// Margins
+@margin-base:	15px;
+
+// Mixins
+// -------------------------------------------
+	.space (@m: 0px, @p: 0px, @b: 0px) {
+		margin:   @m;
+		padding:  @p;
+		border:   @b;
+	}
+	.rounded (@r) {
+		-webkit-border-radius: @r;
+		 -khtml-border-radius: @r;
+		   -moz-border-radius: @r;
+				-ms-border-radius: @r;
+				 -o-border-radius: @r;
+						border-radius: @r;
+		-moz-background-clip:    padding;
+		-webkit-background-clip: padding-box;
+		background-clip:         padding-box;
+	}
+	.noRounded {
+		-webkit-border-radius: 0;
+		 -khtml-border-radius: 0;
+		   -moz-border-radius: 0;
+				-ms-border-radius: 0;
+				 -o-border-radius: 0;
+						border-radius: 0;
+	}
+	.btn3D(@cor: #DDDDDD, @size: 2px) {
+		-webkit-box-shadow: 0px @size 0px @cor, 0px 2px 4px rgba(0,0,0,.2);
+		 -khtml-box-shadow: 0px @size 0px @cor, 0px 2px 4px rgba(0,0,0,.2);
+			 -moz-box-shadow: 0px @size 0px @cor, 0px 2px 4px rgba(0,0,0,.2);
+				-ms-box-shadow: 0px @size 0px @cor, 0px 2px 4px rgba(0,0,0,.2);
+				 -o-box-shadow: 0px @size 0px @cor, 0px 2px 4px rgba(0,0,0,.2);
+						box-shadow: 0px @size 0px @cor, 0px 2px 4px rgba(0,0,0,.2);
+	}
+	.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+		-webkit-animation: @name @duration @delay @ease;
+		 -khtml-animation: @name @duration @delay @ease;
+			 -moz-animation: @name @duration @delay @ease;
+				-ms-animation: @name @duration @delay @ease;
+	}
+	.shadow(@l: 0px, @t: 0px, @s: 0px, @e: 0px, @c: #000000) {
+		-webkit-box-shadow: @l @t @s @e @c;
+		 -khtml-box-shadow: @l @t @s @e @c;
+			 -moz-box-shadow: @l @t @s @e @c;
+				-ms-box-shadow: @l @t @s @e @c;
+				 -o-box-shadow: @l @t @s @e @c;
+						box-shadow: @l @t @s @e @c;
+	}
+	.inset(@l: 0px, @t: 0px, @s: 0px, @e: 0px, @c: #000000) {
+		-webkit-box-shadow: inset @l @t @s @e @c;
+		 -khtml-box-shadow: inset @l @t @s @e @c;
+		 	 -moz-box-shadow: inset @l @t @s @e @c;
+				-ms-box-shadow: inset @l @t @s @e @c;
+				 -o-box-shadow: inset @l @t @s @e @c;
+						box-shadow: inset @l @t @s @e @c;
+	}
+	.noAppearance {
+		-webkit-appearance:	none;
+		 -khtml-appearance: none;
+		 	 -moz-appearance: none;
+				-ms-appearance: none;
+				 -o-appearance: none;
+						appearance: none;
+	}
+	.noShadow {
+		-webkit-box-shadow: none;
+		 -khtml-box-shadow: none;
+			 -moz-box-shadow: none;
+				-ms-box-shadow: none;
+				 -o-box-shadow: none;
+						box-shadow: none;
+	}	
+	.boxsizing(@val: border-box) {
+		-webkit-box-sizing: @val;
+		 -khtml-box-sizing: @val;
+			 -moz-box-sizing: @val;
+				-ms-box-sizing: @val;
+				 -o-box-sizing: @val;
+						box-sizing: @val;						
+	}
+	.transition(@val) { // 1 arg
+		-webkit-transition: @val;
+		 -khtml-transition: @val;
+			 -moz-transition: @val;
+				-ms-transition: @val;
+				 -o-transition: @val;
+						transition: @val;
+	}
+	.transition(@val, @val2) { // 2 args
+		-webkit-transition: @val, @val2;
+		 -khtml-transition: @val, @val2;
+			 -moz-transition: @val, @val2;
+				-ms-transition: @val, @val2;
+				 -o-transition: @val, @val2;
+						transition: @val, @val2;
+	}
+	.transform(@val) {
+		-webkit-transform: @val;
+		 -khtml-transform: @val;
+			 -moz-transform: @val;
+			 	-ms-transform: @val;
+			 	 -o-transform: @val;
+			 	 		transform: @val;
+	}
+	.filter(@val) {
+		-webkit-filter: @val;
+			 -moz-filter: @val;
+				-ms-filter: @val;
+				 -o-filter: @val;
+						filter: @val;
+	}
+	.backface-visibility(@val) {
+		-webkit-backface-visibility: @val;
+		 -khtml-backface-visibility: @val;
+			 -moz-backface-visibility: @val;
+				-ms-backface-visibility: @val;
+				 -o-backface-visibility: @val;
+						backface-visibility: @val;
+	}
+	.mask-box(@val1:none, @val2:none, @val3:none, @val4:none) {
+		-webkit-mask-box-image: -webkit-linear-gradient(@val1, @val2, @val3, @val4);
+		 -khtml-mask-box-image: -khtml-linear-gradient(@val1, @val2, @val3, @val4);
+			 -moz-mask-box-image: -moz-linear-gradient(@val1, @val2, @val3, @val4);
+				-ms-mask-box-image: -ms-linear-gradient(@val1, @val2, @val3, @val4);
+				 -o-mask-box-image: -o-linear-gradient(@val1, @val2, @val3, @val4);
+						mask-box-image: linear-gradient(@val1, @val2, @val3, @val4);
+	}
+	.bg-size(@val: cover) {
+		-webkit-background-size: @val;
+			 -moz-background-size: @val;
+				-ms-background-size: @val;
+				 -o-background-size: @val;
+						background-size: @val;
+	}
+	.w(@val: initial, @max: initial, @min: initial) {
+		width:					@val;
+		max-width:			@max;
+		min-width:			@min;
+	}	
+	.h(@val: initial, @max: initial, @min: initial) {
+		height:					@val;
+		max-height:			@max;
+		min-height:			@min;
+	}
+	.opacity(@dot: 1.0, @nodot: 100) {
+		-ms-filter:				"progid: DXImageTransform.Microsoft.Alpha(Opacity="@nodot")";
+		filter:						alpha(opacity=@nodot);
+		opacity:					@dot;
+	}
+
+	.t(@val)				{ top: @val; }
+	.bo(@val)				{ bottom: @val; }
+	.l(@val)				{ left: @val; }
+	.r(@val)				{ right: @val; }
+	.z(@index)				{ z-index: @index; }
+
+	.bg(@val)				{ background: @val; }
+	.bg-img(@img)			{ background-image: @img; }
+	.bg-pos(@pos)			{ background-position: @pos; }
+	.bg-rep(@rep)			{ background-repeat: @rep; }
+	.bg-col(@col)			{ background-color: @col; }
+	.bg-att(@att)			{ background-attachment: @att; }
+	.lineH(@line)			{ line-height: @line; }
+	.ls(@style: none)		{ list-style: @style; }
+	.lsp(@spacing: 0)		{ letter-spacing: @spacing; }
+	.va(@align: middle)		{ vertical-align: @align; }
+	.ta(@align: left)		{ text-align: @align; }
+	.td(@decoration: none)	{ text-decoration: @decoration;	}
+	.ti(@indent: none)		{ text-indent: @indent; }
+	.ts(@shadow: none)		{ text-shadow: @shadow; }
+	.f(@direction: left)	{ float: @direction; }
+	.fs(@size)				{ font-size: @size; }
+	.fst(@style)			{ font-style: @style; }
+	.fw(@weight)			{ font-weight: @weight; }
+	.c(@color)				{ color: @color; }
+	.o(@overflow)			{ overflow: @overflow; }
+	.pos(@position)			{ position: @position; }
+	
+	.m(@val)				{ margin: @val; }
+	.mt(@val)				{ margin-top: @val; }
+	.mr(@val)				{ margin-right: @val; }
+	.mb(@val)				{ margin-bottom: @val; }
+	.ml(@val)				{ margin-left: @val; }
+	
+	.p(@val)				{ padding: @val; }
+	.pt(@val)				{ padding-top: @val; }
+	.pr(@val)				{ padding-right: @val; }
+	.pb(@val)				{ padding-bottom: @val; }
+	.pl(@val)				{ padding-left: @val; }
+
+	.b(@val)				{ border: @val; }
+	.bdc(@val)				{ border-color: @val; }
+	.bt(@val)				{ border-top: @val; }
+	.br(@val)				{ border-right: @val; }
+	.bb(@val)				{ border-bottom: @val; }
+	.bl(@val)				{ border-left: @val; }
+
+
+// Classes
+// -------------------------------------------
+
+	.clear					{ clear: both; .h(0); }
+	.fleft					{ .f(left); }
+	.fright					{ .f(right); }
+	.align-left				{ .ta(left); }
+	.align-right			{ .ta(right); }
+	.noVisible				{ visibility: hidden; }
+	.visible				{ visibility: visible; }
+	.hide					{ display: none; }
+	.inherit				{ display: inherit; }
+	.block					{ display: block; }
+	.inline					{ display: inline; }
+	.inline-block			{ display: inline-block; }
+	.inline-table			{ display: inline-table; }
+	.table					{ display: table; }
+	.table-cell				{ display: table-cell; }
+	.bold					{ font-weight: bold; }
+	.normal					{ font-weight: normal; }
+	.lowercase				{ text-transform: lowercase; }
+	.uppercase				{ text-transform: uppercase; }
+	.capitalize				{ text-transform: capitalize; }
+	.normalText				{ text-transform: none; }
+	.pointer				{ cursor: pointer; }
+	.center					{ text-align: center; }
+	
+	.margintop				{ .mt(@margin-base); }
+	.marginright			{ .mr(@margin-base); }
+	.marginbottom			{ .mb(@margin-base); }
+	.marginleft				{ .ml(@margin-base); }
+	.mb-15					{ .mb(15px); }
+
+	.nomarginall			{ .m(0); }
+	.nomargintop			{ .mt(0); }
+	.nomarginright			{ .mr(0); }
+	.nomarginbottom			{ .mb(0); }
+	.nomarginleft			{ .ml(0); }
+
+	.nopaddingall			{ .p(0); }
+	.nopaddingtop			{ .pt(0); }
+	.nopaddingright			{ .pr(0); }
+	.nopaddingbottom		{ .pb(0); }
+	.nopaddingleft			{ .pl(0); }
+
+	.nobordergall			{ .b(0); }
+	.nobordertop			{ .bt(0); }
+	.noborderright			{ .br(0); }
+	.noborderbottom			{ .bb(0); }
+	.noborderleft			{ .bl(0); }
+
+
+// Colors
+// -------------------------------------------
+
+	.bg-white				{ .bg(@white); }
+	.bg-black				{ .bg(@black); }
+	.bg-gray-1				{ .bg(@gray-1); }
+	.bg-gray-2				{ .bg(@gray-2); }
+	.bg-gray-3				{ .bg(@gray-3); }
+	.bg-brand-1				{ .bg(@brand-1); }
+	.bg-brand-2				{ .bg(@brand-2); }
+	.bg-brand-3				{ .bg(@brand-3); }
+	.bg-brand-4				{ .bg(@brand-4); }
+
+	.white					{ .c(@white); }
+	.black					{ .c(@black); }
+	.gray-1					{ .c(@gray-1); }
+	.gray-2					{ .c(@gray-2); }
+	.gray-3					{ .c(@gray-3); }
+	.brand-1				{ .c(@brand-1); }
+	.brand-2				{ .c(@brand-2); }
+	.brand-3				{ .c(@brand-3); }
+	.brand-4				{ .c(@brand-4); }
+	
+	.transparent			{ .opacity(0, 0); .c(transparent); }
+
+	// Patterns, Lines & Colors
+	.over-pattern, .over-lines, .over-color, .over-logo {
+		.w(100%);
+		.h(100%);
+		.pos(absolute);
+		.t(0);
+		.l(0);
+		.transition(all 0.3s ease);
+		.opacity(0, 0); .noVisible;
+
+		&.opacity10		{ .opacity(0.1, 10); .visible;	}
+		&.opacity20		{ .opacity(0.2, 20); .visible;	}
+		&.opacity30		{ .opacity(0.3, 30); .visible;	}
+		&.opacity40		{ .opacity(0.4, 40); .visible;	}
+		&.opacity50		{ .opacity(0.5, 50); .visible;	}
+		&.opacity60		{ .opacity(0.6, 60); .visible;	}
+		&.opacity70		{ .opacity(0.7, 70); .visible;	}
+		&.opacity80		{ .opacity(0.8, 80); .visible;	}
+		&.opacity90		{ .opacity(0.9, 90); .visible;	}
+	}
+	.over-pattern {
+		.z(-1);
+		&.dots			{ .bg(url('../img/plume-slider/pat-dots.png') 0 0 repeat);			}
+		&.vertical		{ .bg(url('../img/plume-slider/pat-vertical.png') 0 0 repeat);		}
+		&.horizontal	{ .bg(url('../img/plume-slider/pat-horizontal.png') 0 0 repeat);	}
+		&.diagonal		{ .bg(url('../img/plume-slider/pat-diagonal.png') 0 0 repeat);		}
+	}
+	.over-color {
+		.z(2);
+		.bg(@brand-1);
+		.opacity(0, 0); .noVisible;
+	}
+	.over-lines {
+		.space(0, 10px, 0);
+		.transition(all 0.2s ease);
+		.transform(scale(1.3));
+		.boxsizing;
+		.z(3);
+		.over-lines-inner {
+			.w(100%);
+			.h(100%);
+			.space(0, 0, 0);
+			.b(2px solid @white);
+			.boxsizing;
+		}
+	}

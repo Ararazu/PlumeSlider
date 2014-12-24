@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+	================================================== -->
+	<meta charset="utf-8">
+	<title>Plume Slider</title>
+	<meta name="description" content="Plume Slider | by Ararazu">
+	<meta name="author" content="Ararazu">
+
+	<!-- Mobile Specific Metas
+	================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+
+	<!-- Font Awesome CSS
+	================================================== -->
+	<!-- <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"> -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Plume Slider CSS
+	================================================== -->
+	<link rel="stylesheet" href="css/plume-slider.css">
+	<style>
+		.bg-img-1 { background-image: url('img/plume-slider/1.jpg'); }
+		.bg-img-2 { background-image: url('img/plume-slider/2.jpg'); }
+		.bg-img-3 { background-image: url('img/plume-slider/3.jpg'); }
+	</style>
+</head>
+<body>
+
+	<!-- .loading -->
+	<div class="loading">
+		<div class="over-pattern dots opacity50"></div>
+		<div class="spinner">
+			<!-- <span>Loading...</span> -->
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>		
+	</div>
+	
+	<!-- #slideshow -->
+	<section id="slideshow">
+		<div id="wrapper">
+			<!-- <div class="start-button"><a href="#top" id="go-down" class="goto"><i class="fa fa-angle-down"></i></a></div> -->
+			<div class="plume-slider">				
+				<!-- Slide 1 -->
+				<div id="slide-1" class="plume-slide">
+					<div class="plume-slide-inner">
+<!-- Adding Color and Pattern ".over-color" and ".over-pattern" -->
+<!-- Rule 1. Use <div class="over-color"></div> to put your color over the slide -->
+<!-- Rule 2. Use <div class="over-pattern"></div> to put a pattern over the slide. See rules: -->
+<!--	2.1 - Add a type of pattern. Example: <div class="over-pattern diagonal"></div> -->
+<!-- 	Included classes: "diagonal", "dots", "vertical" and "horizontal" -->
+<!-- 	2.2 - Add opacity. Example: <div class="over-pattern diagonal opacity50"></div> -->
+<!-- 	Included classes: "opacity20", "opacity30", "opacity40",... and "opacity90", -->
+
+<!-- Using Animations -->
+<!-- Rule 1. You need declare class="elem-X" | X is the order number (don't repeat the number) -->
+<!-- Rule 2. Use the class "animation" on each slide element -->
+<!-- Rule 3. Declare position classes. Included positions:
+top left, top center, top right, vcenter left, vcenter center, vcenter right, bottom left, bottom center or bottom right. Example: <div class="elem-1 animation top right"> -->
+<!-- Rule 4. Add type, time, delay and initial position (xy) of each animation. Especifications are bellow: -->
+<!--	4.1 - data-type: Type of animation. Options can be found here http://easings.net/ -->
+<!--	4.2 - data-time: Duration of animation/transition. Using miliseconds -->
+<!--	4.3 - data-delay: Time to wait until element appears. Using miliseconds too -->
+<!--	4.4 - data-xy: Initial positions X (vertical) and Y (horizontal). These positions are used on element to create the animation -->
+						<div class="over-pattern dots opacity80"></div><div class="over-color opacity50"></div>
+						<div class="bg-img bg-img-1"></div>
+						<div class="plume-slide-content">
+							<div class="elem-1 animation top left" data-type="easeOutSine" data-time="1500" data-delay="0" data-xy="0, -200">
+								<div><h5>Ararazu presents...</h5></div>
+							</div>
+							<div class="elem-2 animation vcenter center" data-type="easeOutSine" data-time="1200" data-delay="1300" data-xy="0, -80">
+								<div><h1>$.PlumeSlider</h1><a href="http://www.ararazu.com/" class="link"><i class="fa fa-magic"></i>smoothness and power</a></div>
+							</div>
+							<div class="elem-3 animation top right" data-type="easeOutSine" data-time="600" data-delay="2400" data-xy="0, -20">
+								<div><i class="fa fa-trophy brand-3"></i></div>
+							</div>							
+							<div class="elem-4 animation bottom center" data-type="easeOutBounce" data-time="1000" data-delay="2800" data-xy="-50, 0">
+								<div><p><a href="http://www.ararazu.com/">Download now!</a></p></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 2 -->
+				<div id="slide-2" class="plume-slide">
+					<div class="plume-slide-inner">
+						<div class="over-pattern dots opacity80"></div><div class="over-color opacity50"></div>
+						<div class="bg-img bg-img-2"></div>
+						<div class="plume-slide-content">
+							<div class="elem-1 animation top left" data-type="easeOutSine" data-time="400" data-delay="0" data-xy="0, -50">
+								<div><h5>Easy to edit?</h5></div>
+							</div>
+							<div class="elem-2 animation vcenter left" data-type="easeOutSine" data-time="400" data-delay="150" data-xy="0, -50">
+								<div><h5>Responsive?</h5></div>
+							</div>
+							<div class="elem-3 animation bottom left" data-type="easeOutSine" data-time="400" data-delay="300" data-xy="0, -50">
+								<div><h5>Free?</h5></div>
+							</div>
+							<div class="elem-4 animation top right" data-type="easeOutBounce" data-time="400" data-delay="900" data-xy="50, 0">
+								<div><i class="fa fa-thumbs-up circle"></i></div>
+							</div>
+							<div class="elem-5 animation vcenter right" data-type="easeOutBounce" data-time="400" data-delay="1050" data-xy="50, 0">
+								<div><i class="fa fa-thumbs-up circle"></i></div>
+							</div>
+							<div class="elem-6 animation bottom right" data-type="easeOutBounce" data-time="400" data-delay="1300" data-xy="50, 0">
+								<div><i class="fa fa-thumbs-up circle"></i></div>
+							</div>
+							<div class="elem-7 animation vcenter center" data-type="easeOutBounce" data-time="800" data-delay="1800" data-xy="20, 0">
+								<div><h1>Yes, it is!</h1><a href="http://www.ararazu.com/" class="link"><i class="fa fa-heart brand-4"></i>Made w/ love!</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Slide 3 -->
+				<div id="slide-3" class="plume-slide">
+					<div class="plume-slide-inner">
+						<div class="over-pattern dots opacity80"></div><div class="over-color opacity50"></div>
+						<div class="bg-img bg-img-3"></div>
+						<div class="plume-slide-content">
+							<div class="elem-1 animation top right" data-type="easeOutSine" data-time="800" data-delay="0" data-xy="0, -200">
+								<div><i class="fa fa-gamepad circle"></i></div>
+							</div>
+							<div class="elem-2 animation top right" data-type="easeOutSine" data-time="800" data-delay="600" data-xy="0, -50">
+								<div><h5 class="icon-on-right">Control your animations!</h5></div>
+							</div>
+							<div class="elem-3 animation bottom left" data-type="easeOutSine" data-time="800" data-delay="1200" data-xy="0, 200">
+								<div><i class="fa fa-arrows circle"></i></div>
+							</div>
+							<div class="elem-4 animation bottom left" data-type="easeOutSine" data-time="800" data-delay="1800" data-xy="0, 50">
+								<div><h5 class="icon-on-left">Give directions!</h5></div>
+							</div>
+							<div class="elem-5 animation vcenter center" data-type="easeOutSine" data-time="600" data-delay="2800" data-xy="0, -50">
+								<div><h1>#FlyWithUs</h1><a href="http://www.ararazu.com/" class="link"><i class="fa fa-download"></i>Get PlumeSlider</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.plume-slider -->
+			
+			<!-- Arrows -->
+			<span class="plume-arrow prev"><i class="fa fa-angle-left"></i></span>
+			<span class="plume-arrow next"><i class="fa fa-angle-right"></i></span>
+
+			<!-- bullets -->
+			<ul class="plume-bullets">
+				<li><a id="bullet-1" class="nav-bullet" href="#"></a></li>
+				<li><a id="bullet-2" class="nav-bullet" href="#"></a></li>
+				<li><a id="bullet-3" class="nav-bullet" href="#"></a></li>
+			</ul>
+
+		</div><!-- /.slider -->
+		<div class="clear"></div>
+	</section><!-- /#slideshow -->
+
+	<!-- jQuery Library
+	================================================== -->
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="js/jquery.easing.1.3.min.js"></script>
+	
+	<!-- Responsive Plume Slider
+	================================================== -->
+	<script src="js/plume-slider.js"></script>
+
+	<!-- Plume Slider Scripts
+	================================================== -->
+	<script src="js/scripts.js"></script>
+</body>
+</html>
