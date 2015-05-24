@@ -156,7 +156,7 @@
 							});
 							cS.stop().css('visibility', 'visible').css('z-index', 3).animate({opacity: 1}, (settings.transition/2), function() {
 								// Enable all bg images
-								slider.allBgImg.css('visibility', 'visible').animate({opacity: 1}, (settings.transition/2));
+								cS.find('.bg-img').css('visibility', 'visible').animate({opacity: 1}, (settings.transition/2));
 							});
 							// Hide all elements from previous slide
 							this.allElems.stop().css('visibility', 'hidden').animate({opacity: 0}, (settings.transition/2));
